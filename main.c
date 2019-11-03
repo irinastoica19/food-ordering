@@ -100,7 +100,6 @@ int main() {
                     break;
                 }
                 drinkChoice = choice -'a';
-                printf("%d\n", pricesDrinks[drinkChoice]);
                 state++;
                 break;
             }
@@ -161,9 +160,5 @@ int main() {
             }
         }
     }
-
-
-
-
     return 0;
 }
