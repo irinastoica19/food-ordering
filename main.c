@@ -28,7 +28,6 @@ int main() {
             }
             case 1: {
                 displayFoodType(noOfFoods,food);
-                getchar();
                 foodChoice = getChoiceIndex(noOfFoods, &state);
                 break;
             }
