@@ -54,3 +54,24 @@ void displayConfirmingOrder(int prices[3][4], int foodChoice, int foodTypeChoice
     printf("a) Confirm order\n");
     printf("b) Go back\n");
 }
+void displayOrder(char username [20],char food[][10], int foodChoice, char foodTypes[3][4][20], int foodTypeChoice, int prices[3][4], int drinkChoice, char drinks[][20], int pricesDrinks[5]){
+    printf("This is your order:\n");
+    printf("-------------\n");
+    printf("Name: %s\n", username);
+    printf("Food items:\n");
+    printf("--- %s %s (%d)\n", food[foodChoice], foodTypes[foodChoice][foodTypeChoice],prices[foodChoice][foodTypeChoice]);
+    if (drinkChoice != NR_DRINKS - 1) {
+        printf("--- %s (%d)\n", drinks[drinkChoice], pricesDrinks[drinkChoice]);
+    }
+}
+void displayCutleryOrder(int cutleryChoice, char addInfo[200]){
+    printf("Cutlery:");
+    if (cutleryChoice == 1)
+    printf("yes\n");
+    else
+    printf("no\n");
+    if (addInfo[0] != NULL) {
+    printf("Additional info: ");
+    puts(addInfo);
+}
+}

@@ -18,50 +18,31 @@ int main() {
         switch (state) {
             case 0: {
                 signingIn(username, password);
-                state++;
-                break;
+                state++; break;
             }
             case 1: {
                 displayFoodType(food);
-                foodChoice = getChoiceIndex(NR_FOODS, &state);
-                break;
+                foodChoice = getChoiceIndex(NR_FOODS, &state); break;
             }
             case 2: {
                 displayFoodChoice(food, foodChoice, prices, noFoodTypes, foodTypes);
-                foodTypeChoice = getChoiceIndex(noFoodTypes[foodChoice], &state);
+                foodTypeChoice = getChoiceIndex(noFoodTypes[foodChoice], &state); break;
             }
             case 3: {
                 displayDrinks(food, drinks, pricesDrinks, foodChoice);
-                drinkChoice = getChoiceIndex(NR_DRINKS, &state);
-                break;
+                drinkChoice = getChoiceIndex(NR_DRINKS, &state); break;
             }
             case 4: {
                 displayCutlery();
-                cutleryChoice = getCutleryChoiceIndex (choice, &state);
-                break;
+                cutleryChoice = getCutleryChoiceIndex (choice, &state); break;
             }
             case 5:{
                 printf("Any additional info?\n");
                 gets(addInfo);
             }
             case 6:{
-                printf("This is your order:\n");
-                printf("-------------\n");
-                printf("Name: %s\n", username);
-                printf("Food items:\n");
-                printf("--- %s %s (%d)\n", food[foodChoice], foodTypes[foodChoice][foodTypeChoice],prices[foodChoice][foodTypeChoice]);
-                if (drinkChoice != NR_DRINKS - 1) {
-                    printf("--- %s (%d)\n", drinks[drinkChoice], pricesDrinks[drinkChoice]);
-                }
-                printf("Cutlery:");
-                if (cutleryChoice == 1)
-                    printf("yes\n");
-                else
-                    printf("no\n");
-                if (addInfo[0] != NULL) {
-                    printf("Additional info: ");
-                    puts(addInfo);
-                }
+                displayOrder(username, food,foodChoice,foodTypes,foodTypeChoice,prices,drinkChoice, drinks, pricesDrinks);
+                displayCutleryOrder(cutleryChoice, addInfo);
                 displayConfirmingOrder(prices, foodChoice,foodTypeChoice,pricesDrinks,drinkChoice);
                 choice = getchar();
                 if(choice=='a') {
@@ -69,8 +50,7 @@ int main() {
                 } else {
                     state--;
                 }
-                getchar();
-                break;
+                getchar(); break;
             }
         }
     }

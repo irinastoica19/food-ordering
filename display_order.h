@@ -11,5 +11,7 @@ void displayFoodChoice(char food[][10], int foodChoice, int prices[3][4], int no
 void displayDrinks(char food[][10], char drinks[][20],  int pricesDrinks[5], int foodChoice);
 void displayCutlery();
 void displayConfirmingOrder(int prices[3][4], int foodChoice, int foodTypeChoice, int pricesDrinks[5], int drinkChoice);
+void displayOrder(char username [20],char food[][10], int foodChoice, char foodTypes[3][4][20], int foodTypeChoice, int prices[3][4], int drinkChoice, char drinks[][20], int pricesDrinks[5]);
+void displayCutleryOrder(int cutleryChoice, char addInfo[200]);
 
 #endif //FOOD_ORDERING_DISPLAY_ORDER_H

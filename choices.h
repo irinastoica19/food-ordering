@@ -7,6 +7,6 @@
 
 int getChoiceIndex( int nrOfTypes, int *state);
 int getCutleryChoiceIndex(int choice, int *state);
-int getOrderChoice(int choice, int *state);
+int finishingOrder(int choice, int orderPrinted , int *state);
 
 #endif //FOOD_ORDERING_CHOICES_H

@@ -33,15 +33,14 @@ int getCutleryChoiceIndex(int choice, int *state){
     }
     return cutleryChoiceIndex;
 }
-int getOrderChoice(int choice, int *state){
+int finishingOrder(int choice , int *state){
     int orderChoice;
     choice = getchar();
     if(choice=='a') {
         orderChoice = 1;
     } else {
-    (*state)--;
+        (*state)--;
     }
-    getchar();
     return orderChoice;
 }
 
