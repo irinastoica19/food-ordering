@@ -40,7 +40,7 @@ void displayCutlery(){
     printf("Do you want cutlery?\n");
     printf("a) Yes\nb) No, thanks!\nc) Go back\n");
 }
-void displayConfirmingOrder(){
+void displayConfirmationOrder(){
     printf("a) Confirm order\n");
     printf("b) Go back\n");
 }
@@ -48,7 +48,20 @@ void displayPaymentInfo(int prices[3][4], int foodChoice, int foodTypeChoice, in
     printf("Payment amount: %d\n", prices[foodChoice][foodTypeChoice] + pricesDrinks[drinkChoice]);
     printf("-------------\n");
 }
-void displayOrder(char username [20],char food[][10], int foodChoice, char foodTypes[3][4][20], int foodTypeChoice, int prices[3][4], int drinkChoice, char drinks[][20], int pricesDrinks[5]){
+void displayCutleryOrder(int cutleryChoice){
+    printf("Cutlery:");
+    if (cutleryChoice == 1)
+        printf("yes\n");
+    else
+        printf("no\n");
+}
+void displayAddInfo(char addInfo[200]){
+    if (addInfo[0] != NULL) {
+        printf("Additional info: ");
+        puts(addInfo);
+    }
+}
+void displayOrder(char username[],char food[][], int foodChoice, char foodTypes[][][], int foodTypeChoice, int prices[][], int drinkChoice, char drinks[][], int pricesDrinks[],int cutleryChoice){
     printf("This is your order:\n");
     printf("-------------\n");
     printf("Name: %s\n", username);
@@ -57,15 +70,6 @@ void displayOrder(char username [20],char food[][10], int foodChoice, char foodT
     if (drinkChoice != NR_DRINKS - 1) {
         printf("--- %s (%d)\n", drinks[drinkChoice], pricesDrinks[drinkChoice]);
     }
+    displayCutleryOrder(cutleryChoice);
 }
-void displayCutleryOrder(int cutleryChoice, char addInfo[200]){
-    printf("Cutlery:");
-    if (cutleryChoice == 1)
-    printf("yes\n");
-    else
-    printf("no\n");
-    if (addInfo[0] != NULL) {
-    printf("Additional info: ");
-    puts(addInfo);
-}
-}
+

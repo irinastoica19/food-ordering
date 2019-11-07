@@ -7,7 +7,8 @@ int main() {
     char food[][10] = {"Pizza","Pasta","Salad"};
     char foodTypes[3][4][20] = { {"Carbonara", "Diavola", "Margherita"}, {"Chicken alfredo", "Mac&cheese"}, {"Tuna", "Chicken", "Greek", "Cobb"} };
     char drinks[][20] = {"Coca Cola", "Fanta", "Lipton", "Water", "No, thanks!"};
-    char addInfo[200], username[20], password[20];
+    char username[20], password[20];
+    char addInfo[200];
     int prices[3][4] = {{21, 23, 19}, {23, 21}, {23, 22, 19, 21} };
     int pricesDrinks[5] = {5, 5, 5, 4, 0};
     int noFoodTypes[] = {3,2,4};
@@ -33,17 +34,17 @@ int main() {
             }
             case 4: {
                 displayCutlery();
-                cutleryChoice = getCutleryChoiceIndex (choice, &state); break;
+                cutleryChoice = getCutleryChoiceIndex (choice, &state);break;
             }
             case 5:{
                 printf("Any additional info?\n");
                 gets(addInfo);
             }
             case 6:{
-                displayOrder(username, food,foodChoice,foodTypes,foodTypeChoice,prices,drinkChoice, drinks, pricesDrinks);
-                displayCutleryOrder(cutleryChoice, addInfo);
+                displayOrder(username, food,foodChoice,foodTypes,foodTypeChoice,prices,drinkChoice, drinks, pricesDrinks, cutleryChoice);
+                displayAddInfo(addInfo);
                 displayPaymentInfo(prices, foodChoice, foodTypeChoice, pricesDrinks, drinkChoice);
-                displayConfirmingOrder();
+                displayConfirmationOrder();
                 choice = getchar();
                 if(choice=='a') {
                     orderPrinted = 1;
