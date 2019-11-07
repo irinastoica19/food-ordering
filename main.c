@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include "display_order.h"
 #include "choices.h"
-#define NR_FOODS 3
-#define NR_DRINKS 5
+#include "constants.h"
 int main() {
     printf("Welcome to Food Thingies!\n");
     char food[][10] = {"Pizza","Pasta","Salad"};
@@ -43,7 +42,8 @@ int main() {
             case 6:{
                 displayOrder(username, food,foodChoice,foodTypes,foodTypeChoice,prices,drinkChoice, drinks, pricesDrinks);
                 displayCutleryOrder(cutleryChoice, addInfo);
-                displayConfirmingOrder(prices, foodChoice,foodTypeChoice,pricesDrinks,drinkChoice);
+                displayPaymentInfo(prices, foodChoice, foodTypeChoice, pricesDrinks, drinkChoice);
+                displayConfirmingOrder();
                 choice = getchar();
                 if(choice=='a') {
                     orderPrinted = 1;

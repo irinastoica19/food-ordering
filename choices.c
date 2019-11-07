@@ -3,8 +3,6 @@
 //
 
 #include <stdio.h>
-#define NR_FOODS 3
-#define NR_DRINKS 5
 
 int getChoiceIndex(int nrOfTypes, int *state) {
     int choiceIndex;
