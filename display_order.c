@@ -61,7 +61,7 @@ void displayAddInfo(char addInfo[200]){
         puts(addInfo);
     }
 }
-void displayOrder(char username[],char food[][], int foodChoice, char foodTypes[][][], int foodTypeChoice, int prices[][], int drinkChoice, char drinks[][], int pricesDrinks[],int cutleryChoice){
+void displayOrder(char username[20],char food[][10], int foodChoice, char foodTypes[3][4][20], int foodTypeChoice, int prices[3][4], int drinkChoice, char drinks[][20], int pricesDrinks[5], int cutleryChoice){
     printf("This is your order:\n");
     printf("-------------\n");
     printf("Name: %s\n", username);
