@@ -1,6 +1,23 @@
 cmake_minimum_required(VERSION 3.15)
-project(food_ordering C)
+project(food_ordering)
 
-set(CMAKE_C_STANDARD 99)
+set(CMAKE_CXX_STANDARD 14)
 
-add_executable(food_ordering main.c display_order.h display_order.c choices.h choices.c constants.h)
+include_directories(.)
+
+add_executable(food_ordering
+        .idea/workspace.xml
+        cmake-build-debug/cmake_install.cmake
+        cmake-build-debug/CMakeCache.txt
+        cmake-build-debug/food_ordering.cbp
+        cmake-build-debug/food_ordering.exe
+        cmake-build-debug/Makefile
+        choices.c
+        choices.h
+        CMakeLists.txt
+        constants.h
+        display_order.c
+        display_order.h
+        main.c
+        user.c
+        user.h)
